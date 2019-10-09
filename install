@@ -121,10 +121,10 @@ fi
 # now do different things depending on distro
 case "$distro" in
     centos)
-            CXX=$rocm_path/$compiler cmake3 -DBUILD_BENCHMARK=ON ../../.
+            CXX=$rocm_path/$compiler cmake3 -j 16 -DBUILD_BENCHMARK=ON -DCMAKE_INSTALL_PREFIX=/opt/rocm-2.7.3 ../../.
         ;;
     ubuntu)
-            CXX=$rocm_path/$compiler cmake -DBUILD_BENCHMARK=ON ../../. # or cmake-gui ../.
+            CXX=$rocm_path/$compiler cmake -DBUILD_BENCHMARK=ON -DCMAKE_INSTALL_PREFIX=/opt/rocm-2.7.3 # or cmake-gui ../.
         ;;
 esac 
 
