@@ -124,7 +124,7 @@ case "$distro" in
             CXX=$rocm_path/$compiler cmake3 -j 16 -DBUILD_BENCHMARK=ON -DCMAKE_INSTALL_PREFIX=/opt/rocm-2.7.3 ../../.
         ;;
     ubuntu)
-            CXX=$rocm_path/$compiler cmake -DBUILD_BENCHMARK=ON -DCMAKE_INSTALL_PREFIX=/opt/rocm-2.7.3 # or cmake-gui ../.
+            CXX=$rocm_path/$compiler cmake  -j 16 -DBUILD_BENCHMARK=ON -DCMAKE_INSTALL_PREFIX=/opt/rocm-2.7.3 ../../.  # or cmake-gui ../.
         ;;
 esac 
 
